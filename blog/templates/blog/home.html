@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title%} Home {% endblock title %}
+
+{% block content %}
+{% for post in posts %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="me-2 text-primary text-decoration-none h5" href="#">{{ post.author }}</a>
+            <small class="text-muted">{{ post.date | date:"F d/Y" }}</small>
+        </div>
+        <h2><a class="article-title text-decoration-none" href="#">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.content }}</p>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
